@@ -10,6 +10,7 @@
     <title>Climate Check</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/index-style.css">
     <link rel="icon" href="/assets/favicon.svg">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
@@ -46,34 +47,52 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4">
+                <div class="container-fluid px-4 mb-4">
                     <h1 class="mt-4">Climate Check</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
                     <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card bg-white text-white mb-4 h-100">
-                                <div class="card-body text-dark display-6 text-center font-weight-bold">Temperatura</div>
-                                
+                        <div class="col-xl-6 mb-4 mb-xl-0">
+                            <div class="card bg-white text-white mb-4 h-100 d-flex flex-column justify-content-center">
+                                <div class="d-flex flex-column justify-content-center align-items-center gap-4">
+                                    <div class="card-body text-dark display-1 text-center font-weight-bold">Temperatura
+                                    </div>
+                                    <div class="badge text-bg-secondary custom-badge h2" id="temperature-actual-value">
+                                        <p class="display-4 mb-0">0°C</p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
+                        <div class="col-xl-6 h-100">
+                            <div class="card  h-100">
                                 <div class="card-header">
                                     <i class="fas fa-chart-area me-1"></i>
-                                    Dados Básicos
+                                    Gráfico da temperatura
                                 </div>
-                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                                <div class="card-body"><canvas id="temperature-chart" width="100%" height="40"></canvas></div>
                             </div>
                         </div>
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
+                        <div class="col-xl-6 mt-4">
+                            <div class="card bg-white text-white mb-4 h-100 d-flex flex-column justify-content-center">
+                                <div class="d-flex flex-column justify-content-center align-items-center gap-4">
+                                    <div class="card-body text-dark display-1 text-center font-weight-bold">Umidade
+                                    </div>
+                                    <div class="badge text-bg-secondary custom-badge h2" id="moisture-actual-value">
+                                        <p class="display-4 mb-0">0°C</p>
+                                    </div>
+                                </div>
+                        
+                            </div>
+                        </div>
+                        <div class="col-xl-6 mt-4 h-100">
+                            <div class="card">
                                 <div class="card-header">
                                     <i class="fas fa-chart-area me-1"></i>
-                                    Gráficos
+                                    Gráfico da umidade
                                 </div>
-                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                <div class="card-body"><canvas id="moisture-chart" width="100%" height="40"></canvas></div>
                             </div>
                         </div>
                     </div>
@@ -82,12 +101,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
+                        <div class="text-muted">Copyright &copy; Climate Check 2023</div>
                     </div>
                 </div>
             </footer>
