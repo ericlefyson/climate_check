@@ -1,6 +1,6 @@
-import express from "express";
-import { json } from "body-parser";
-import cors from "cors";
+const express = require("express");
+const { json } = require("body-parser");
+const cors = require("cors");
 
 let temperatureData = {};
 
@@ -9,15 +9,15 @@ app.use(cors());
 app.use(json());
 
 app.post("/temperature", (req, res) => {
-  temperatureData = req.body; // Os dados da temperatura são enviados no corpo da solicitação POST
+  temperatureData = req.body; 
   console.log("Received temperature data:", temperatureData);
-  // Você pode salvar os dados em um banco de dados ou realizar outras ações aqui
+
   res.status(200).send("Temperature data received successfully");
 });
 
 app.get("/temperature", (req, res) => {
   console.log("Temperature data:", temperatureData);
-  // Você pode salvar os dados em um banco de dados ou realizar outras ações aqui
+
   res.status(200).send(temperatureData);
 });
 
